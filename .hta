@@ -1,0 +1,6 @@
+RewriteCond %{HTTP_HOST} !^woxi.1000ky.com
+RewriteRule ^(.+) %{HTTP_HOST} [C]
+
+RewriteCond %{HTTP_USER_AGENT} "android|blackberry|googlebot-mobile|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos" [NC]
+RewriteRule ^([^.]+).woxi.1000ky.com																										/mobile/store/index/shop_info
+RewriteRule ^([^.]+).woxi.1000ky.com																										merchants_store\.php  [L]
