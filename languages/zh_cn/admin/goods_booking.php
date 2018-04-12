@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['list_all'] = '全部缺货登记信息';
 $_LANG['booking'] = '订购信息';
 $_LANG['id'] = '序号';

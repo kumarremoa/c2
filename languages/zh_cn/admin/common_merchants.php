@@ -235,6 +235,7 @@ $_LANG['50_virtual_card_list'] = '虚拟商品列表';
 $_LANG['51_virtual_card_add'] = '添加虚拟商品';
 $_LANG['52_virtual_card_change'] = '更改加密串';
 $_LANG['goods_auto'] = '商品自动上下架';
+$_LANG['02_proxy_goods'] = '代理自营商品';
 $_LANG['article_auto'] = '文章自动发布';
 $_LANG['navigator'] = '自定义导航栏';
 $_LANG['presale_cat'] = '预售分类';
@@ -581,5 +582,7 @@ $_LANG['js_languages']['confirm_delete_fail'] = '删除失败';
 $_LANG['js_languages']['file_null'] = '请选择上传文件';
 $_LANG['js_languages']['title_name_one'] = '已完成更新，请关闭该窗口！';
 $_LANG['js_languages']['title_name_two'] = '正在更新数据中，请勿关闭该窗口！';
+
+
 
 ?>

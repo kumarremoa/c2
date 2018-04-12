@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['region_store_add'] = '添加卖场';
 $_LANG['region_store_exist'] = '卖场已存在，请重新添加';
 $_LANG['rs_region_exist'] = '卖场地区已被指定，请重新设置';

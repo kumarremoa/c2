@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 define('IN_ECS', true);
 require dirname(__FILE__) . '/includes/init.php';
 require ROOT_PATH . '/includes/lib_area.php';

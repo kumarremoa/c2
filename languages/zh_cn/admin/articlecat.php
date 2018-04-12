@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['cat_name'] = '文章分类名称';
 $_LANG['type'] = '分类类型';
 $_LANG['type_name'][COMMON_CAT] = '普通分类';

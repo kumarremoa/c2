@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['keyword_name'] = '关键词';
 $_LANG['list_link'] = '用户检索记录列表';
 $_LANG['keyword_total_count'] = '总搜索';

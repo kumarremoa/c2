@@ -1,5 +1,5 @@
 <?php
-//QQ:123456  商创网络  禁止倒卖 一经发现停止任何服务
+
 function sub_str($str, $length = 0, $append = true)
 {
 	$str = trim($str);
@@ -520,7 +520,7 @@ function check_file_type($filename, $realname = '', $limit_ext_types = '')
 				if (substr($str, 0, 4) == 'GIF8' && $extname != 'txt') {
 					$format = 'gif';
 				}
-				else if (substr($str, 0, 8) == "�PNG\r\n\x1a\n") {
+				else if (substr($str, 0, 8) == "�PNG\r\n\x1a\n") {
 					$format = 'png';
 				}
 				else {
@@ -1826,6 +1826,15 @@ function get_admin_seller_static_cache($cache = array())
 				write_static_cache('category_tree_leve_one0', $cat_list, $cache['category']['cache_path']);
 			}
 		}
+	}
+}
+function p($var){
+	if(is_bool($var)){
+		var_dump($var);
+	}elseif(is_null($var)){
+		var_dump(NULL);
+	}else{
+		echo "<pre style='position:relative;z-index:1000;padding:10px;border-radius:5px;background:#F5F5F5;border:1px solid #aaa;font-size:14px;line-height:18px;opacity:0.9;'>" . print_r($var,true) ."</pre>";
 	}
 }
 

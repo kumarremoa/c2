@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['vc_type_list'] = '储值卡类型列表';
 $_LANG['value_card_list'] = '储值卡列表';
 $_LANG['pc_type_list'] = '充值卡类型列表';

@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 function get_topic_list()
 {
 	$adminru = get_admin_ru_id();

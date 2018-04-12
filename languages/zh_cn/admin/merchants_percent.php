@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['brokerage_amount_list'] = '店铺结算';
 $_LANG['add_suppliers_server'] = '设置商家应结';
 $_LANG['add_suppliers_percent'] = '添加百分比';

@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['user_password'] = '用户密码';
 $_LANG['determine_password'] = '确定密码';
 $_LANG['batch_import_user'] = '批量导入用户';

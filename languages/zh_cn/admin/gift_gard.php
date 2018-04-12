@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['is_goods'] = '是否配置商品';
 $_LANG['yes_goods'] = '已配置';
 $_LANG['not_goods'] = '未配置';

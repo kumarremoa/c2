@@ -27,6 +27,7 @@ $purview['50_virtual_card_list'] = 'virualcard';
 $purview['51_virtual_card_add'] = 'virualcard';
 $purview['52_virtual_card_change'] = 'merch_virualcard';
 $purview['goods_auto'] = 'goods_auto';
+$purview['02_proxy_goods'] = 'proxy_goods';
 $purview['seller_service_rank'] = 'seller_service';
 $purview['discuss_circle'] = 'discuss_circle';
 $purview['website'] = 'website';

@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['sender_id'] = '留言者';
 $_LANG['receiver_id'] = '接收者';
 $_LANG['send_date'] = '发送日期';

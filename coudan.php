@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 function favourable_goods_list($user_rank, $favourable_id, $sort = '', $order = '', $size, $page, $warehouse_id = 0, $area_id = 0)
 {
 	if ($sort) {

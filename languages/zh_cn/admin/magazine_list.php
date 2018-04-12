@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['add_new'] = '添加新杂志';
 $_LANG['magazine_name'] = '杂志标题';
 $_LANG['magazine_edit'] = '编辑';

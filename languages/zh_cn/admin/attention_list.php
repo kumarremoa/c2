@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['goods_name'] = '商品名称';
 $_LANG['goods_last_update'] = '最新更新日期';
 $_LANG['attention_addtolist'] = '插入发送队列';

@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['user_id'] = '编号';
 $_LANG['user_name'] = '用户名';
 $_LANG['parent_name'] = '父管理员';

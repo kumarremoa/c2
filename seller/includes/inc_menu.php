@@ -76,6 +76,7 @@ $modules['02_cat_and_goods']['15_batch_edit'] = 'goods_batch.php?act=select';
 $modules['02_cat_and_goods']['16_goods_script'] = 'gen_goods_script.php?act=setup';
 $modules['02_cat_and_goods']['17_tag_manage'] = 'tag_manage.php?act=list';
 $modules['02_cat_and_goods']['goods_auto'] = 'goods_auto.php?act=list';
+$modules['02_cat_and_goods']['02_proxy_goods'] = 'proxy_goods.php?act=list';
 $modules['11_system']['website'] = 'website.php?act=list';
 $modules['02_cat_and_goods']['gallery_album'] = 'gallery_album.php?act=list';
 $modules['02_promotion']['02_snatch_list'] = 'snatch.php?act=list';

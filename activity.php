@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 function get_range_gift_list($act_id, $type)
 {
 	$sql = 'SELECT act_range_ext, gift FROM ' . $GLOBALS['ecs']->table('favourable_activity') . (' WHERE review_status = 3 AND act_id = \'' . $act_id . '\'');

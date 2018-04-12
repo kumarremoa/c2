@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['msg_title'] = '留言标题';
 $_LANG['list_all'] = '查看所有留言';
 $_LANG['msg_id'] = '编号';

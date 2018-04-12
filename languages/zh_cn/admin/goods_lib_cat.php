@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['is_show'] = '是否显示';
 $_LANG['parent_id'] = '上级分类';
 $_LANG['cat_name'] = '分类名称';

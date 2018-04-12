@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['alidayu_add'] = '添加模板';
 $_LANG['alidayu_list'] = '短信模板列表';
 $_LANG['add_success'] = '添加成功';

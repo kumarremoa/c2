@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['link_id'] = '编号';
 $_LANG['link_name'] = '链接名称';
 $_LANG['link_url'] = '链接地址';

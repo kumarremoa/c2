@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['db_manage'] = '数据库管理';
 $_LANG['start_backup'] = '开始备份';
 $_LANG['backup_name'] = '备份名称';

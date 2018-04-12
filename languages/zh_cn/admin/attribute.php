@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['set_gcolor'] = '设置属性颜色';
 $_LANG['by_goods_type'] = '按商品类型显示';
 $_LANG['all_goods_type'] = '所有商品类型';

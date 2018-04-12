@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 function shipping_list()
 {
 	$sql = 'SELECT shipping_id, shipping_name ' . 'FROM ' . $GLOBALS['ecs']->table('shipping') . ' WHERE enabled = 1';

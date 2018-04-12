@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['goods_type_list'] = '商品类型列表';
 $_LANG['edit_goods_type'] = '编辑商品类型';
 $_LANG['attr_groups'] = '属性分组';

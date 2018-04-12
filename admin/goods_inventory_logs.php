@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 function get_goods_inventory_logs($ru_id)
 {
 	include_once ROOT_PATH . 'includes/lib_order.php';

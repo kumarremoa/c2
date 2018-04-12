@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['reminder'] = '温馨提示';
 $_LANG['notice_order_num'] = '用户的个数,决定了批量提交订单的数量！';
 $_LANG['batch_import_user'] = '批量导入用户';

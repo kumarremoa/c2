@@ -1934,12 +1934,14 @@ function set_seller_menu()
 	global $modules;
 	global $purview;
 	global $_LANG;
+	
 
 	foreach ($modules as $key => $value) {
 		ksort($modules[$key]);
 	}
 
 	ksort($modules);
+
 	$action_list = explode(',', $_SESSION['seller_action_list']);
 	$privilege_seller = 0;
 
@@ -1949,7 +1951,6 @@ function set_seller_menu()
 
 	$GLOBALS['smarty']->assign('privilege_seller', $privilege_seller);
 	$action_menu = array();
-
 	foreach ($purview as $key => $val) {
 		if (is_array($val)) {
 			foreach ($val as $k => $v) {
@@ -1974,7 +1975,6 @@ function set_seller_menu()
 			unset($modules[$key]);
 		}
 	}
-
 	$menu = array();
 	$i = 0;
 
@@ -1988,13 +1988,14 @@ function set_seller_menu()
 
 		foreach ($val as $k => $v) {
 			if (get_menu_url($v)) {
+				
 				$menu[$i]['children'][] = array('action' => $k, 'label' => get_menu_url($v, $_LANG[$k]), 'url' => get_menu_url($v), 'status' => get_user_menu_status($k));
 			}
 		}
 
 		$i++;
 	}
-
+	
 	$GLOBALS['smarty']->assign('seller_menu', $menu);
 	$sql = 'SELECT value FROM ' . $GLOBALS['ecs']->table('shop_config') . ' WHERE code = \'seller_logo\'';
 	$seller_logo = strstr($GLOBALS['db']->getOne($sql), 'images');

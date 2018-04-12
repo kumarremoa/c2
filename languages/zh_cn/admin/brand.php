@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['brand_separate'] = '统一使用平台品牌ID';
 $_LANG['brand'] = '品牌';
 $_LANG['brand_name'] = '品牌名称';

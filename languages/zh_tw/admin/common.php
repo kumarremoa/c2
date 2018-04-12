@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['app_name'] = 'ECSHOP';
 $_LANG['cp_home'] = 'ECSHOP 管理中心';
 $_LANG['copyright'] = '版權所有 &copy; 2005-2017 上海商创網絡科技有限公司，並保留所有權利。';

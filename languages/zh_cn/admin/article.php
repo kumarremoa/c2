@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['title'] = '文章标题';
 $_LANG['cat'] = '文章分类';
 $_LANG['content'] = '文章内容';

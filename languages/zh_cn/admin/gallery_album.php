@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['add_album'] = '添加相册';
 $_LANG['edit_album'] = '编辑相册';
 $_LANG['album_mame'] = '相册名称';

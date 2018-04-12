@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['cron_name'] = '计划任务名称';
 $_LANG['cron_code'] = '此计划任务';
 $_LANG['if_open'] = '开启';

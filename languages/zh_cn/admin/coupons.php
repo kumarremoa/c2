@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['coupons_type'] = '优惠券类型';
 $_LANG['coupons_list'] = '优惠券列表';
 $_LANG['type_name'] = '类型名称';

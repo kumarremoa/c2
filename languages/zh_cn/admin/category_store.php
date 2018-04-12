@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['category_separate'] = '分离店铺分类';
 $_LANG['categoryFile'] = '类目证件';
 $_LANG['document_title'] = '证件标题';

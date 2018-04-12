@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['lab_area_name'] = '区域名称';
 $_LANG['lab_freight_type'] = '模板类型';
 $_LANG['lab_goods_freighttemp'] = '运费模板';

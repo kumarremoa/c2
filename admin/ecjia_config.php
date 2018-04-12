@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 function ecjia_config($code)
 {
 	$sql = 'SELECT value FROM ' . $GLOBALS['ecs']->table('shop_config') . (' WHERE code = \'' . $code . '\' ');

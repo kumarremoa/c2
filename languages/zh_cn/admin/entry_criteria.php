@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['seller_garde_list'] = '商家等级列表';
 $_LANG['entry_criteria_list'] = '标准列表';
 $_LANG['add_entry_criteria'] = '添加标准';

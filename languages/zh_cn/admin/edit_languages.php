@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['edit_languages'] = '语言项编辑';
 $_LANG['enter_keywords'] = '输入语言项关键字';
 $_LANG['edit_button'] = '确认修改';

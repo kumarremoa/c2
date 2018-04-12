@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['captcha_font_size'] = '验证码内容大小';
 $_LANG['comt_font_size'] = '(如：font-size:18)';
 $_LANG['captcha_length'] = '验证码位数';

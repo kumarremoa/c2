@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 function cat_update($cat_id, $args)
 {
 	if (empty($args) || empty($cat_id)) {

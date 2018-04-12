@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 function conflict_userlist()
 {
 	$filter['flag'] = empty($_REQUEST['flag']) ? 0 : intval($_REQUEST['flag']);

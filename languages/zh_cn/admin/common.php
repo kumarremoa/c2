@@ -812,4 +812,6 @@ $_LANG['operation_prompt_content']['info'][1] = '编辑短信内容时请根据�
 $_LANG['exist_cat'] = '分类名称“ %s ”已存在！';
 $_LANG['cloud_api'] = '贡云配置';
 
+
+$_LANG['proxy_goods'] = '代理自营商品';
 ?>

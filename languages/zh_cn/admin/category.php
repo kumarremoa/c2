@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['categoryFile'] = '商家入驻流程经营类目证件';
 $_LANG['document_title'] = '证件标题';
 $_LANG['title_catedit_succed'] = '证件标题编辑成功!';

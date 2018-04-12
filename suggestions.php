@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 function cut_str($string, $sublen, $start = 0, $code = 'gbk')
 {
 	if ($code == 'utf-8') {

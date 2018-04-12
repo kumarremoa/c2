@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['user_name'] = '管理员用户名';
 $_LANG['email'] = 'Email地址';
 $_LANG['enter_admin_pwd'] = '管理员新密码';

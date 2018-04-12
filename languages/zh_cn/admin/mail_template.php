@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['select_template'] = '请选择邮件模版：';
 $_LANG['update_success'] = '保存模板内容成功。';
 $_LANG['update_failed'] = '保存模板内容失败。';

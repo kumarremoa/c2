@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['user_stats'] = '会员统计';
 $_LANG['start_end_data'] = '起止日期';
 $_LANG['query'] = '查询';

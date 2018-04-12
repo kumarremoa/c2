@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 function setNumberFormat($number = 0, $limit = 0, $point = 0, $round = true)
 {
 	$number = intval($number);

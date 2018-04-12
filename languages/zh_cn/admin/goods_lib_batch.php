@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['select_method'] = '选择商品的方式：';
 $_LANG['by_cat'] = '根据商品分类、品牌';
 $_LANG['by_sn'] = '根据商品货号';

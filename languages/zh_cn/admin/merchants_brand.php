@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 $_LANG['brand_name'] = '品牌名称';
 $_LANG['site_url'] = '品牌网址';
 $_LANG['brand_desc'] = '品牌描述';

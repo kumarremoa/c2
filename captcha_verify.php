@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 define('IN_ECS', true);
 define('INIT_NO_SMARTY', true);
 require dirname(__FILE__) . '/includes/init.php';

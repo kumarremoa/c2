@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['app_name'] = 'ECSHOP';
 $_LANG['cp_home'] = 'ECSHOP Management';
 $_LANG['copyright'] = ' &copy; 2005-2017 ECSHOP Copyright, <br> All Right Reserved.';

@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 if (!isset($_COOKIE['province'])) {
 	$area_array = get_ip_area_name();
 

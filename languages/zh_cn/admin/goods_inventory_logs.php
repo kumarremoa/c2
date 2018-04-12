@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['log_id'] = '编号';
 $_LANG['drop_logs'] = '删除日志';
 $_LANG['goods_name'] = '商品名称';

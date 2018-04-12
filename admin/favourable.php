@@ -1,5 +1,5 @@
 <?php
-//zend by 商创网络 Q Q:123456    禁止倒卖 一经发现停止任何服务
+
 function favourable_list($ru_id, $rs_id = 0)
 {
 	$result = get_filter();

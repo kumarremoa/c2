@@ -1,5 +1,5 @@
 <?php
-//旺旺ecshop2012  禁止倒卖 一经发现停止任何服务
+
 $_LANG['complain_title'] = '投诉类型';
 $_LANG['back_list'] = '返回列表';
 $_LANG['back_info'] = '返回详情';
