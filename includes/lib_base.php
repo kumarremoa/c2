@@ -355,9 +355,11 @@ function file_mode_info($file_path)
 
 function log_write($arg, $file = '', $line = '')
 {
+
 	if ((DEBUG_MODE & 4) != 4) {
 		return NULL;
 	}
+
 
 	$str = "\r\n-- " . date('Y-m-d H:i:s') . " --------------------------------------------------------------\r\n";
 	$str .= 'FILE: ' . $file . "\r\nLINE: " . $line . "\r\n";
@@ -1836,6 +1838,22 @@ function p($var){
 	}else{
 		echo "<pre style='position:relative;z-index:1000;padding:10px;border-radius:5px;background:#F5F5F5;border:1px solid #aaa;font-size:14px;line-height:18px;opacity:0.9;'>" . print_r($var,true) ."</pre>";
 	}
+}
+function q($b){
+	$ip = $_SERVER["REMOTE_ADDR"];
+	$time = date('Y-m-d H:i:s');
+	if(is_array($b)){
+		foreach($b as $k=>$v){
+			$ky.=$k."=>".$v."###";
+		}
+	}else{
+		$ky=$b;
+	}
+	$sql = "INSERT INTO " . $GLOBALS['ecs']->table('aarizhi') .
+            " (content, ip,time)".
+            " VALUES ('$ky','$ip','$time')";
+    $GLOBALS['db']->query($sql);
+
 }
 
 if (!defined('IN_ECS')) {

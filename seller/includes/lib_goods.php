@@ -1552,6 +1552,189 @@ function get_add_seckill_goods($sec_id, $tb_id)
 	return $arr;
 }
 
+function get_proxy_goods_list($is_proxy, $conditions = '')
+{
+	$adminru = get_admin_ru_id();
+	$ruCat = '';
+	
+	if($is_proxy == 3){
+		$filter['is_proxy'] = $_REQUEST['is_proxy'];
+	}else{
+		$filter['is_proxy'] = $is_proxy;
+	}
+	
+	
+	if (0 < $adminru['ru_id']) {
+		//$ruCat = ' and s.ru_id <> \'' . $adminru['ru_id'] . '\' and s.proxy_status = 0';
+		//$ruCat = ' and (s.ru_id <> \'' . $adminru['ru_id'] . '\' or s.ru_id is null) and (s.proxy_status <> 1 or s.proxy_status is null)';
+		if($filter['is_proxy']){
+			$manage = 1;
+			$ruCat = ' and s.ru_id = \'' . $adminru['ru_id'] . '\' and s.proxy_status = 1';
+		}else{
+			$ruCat = ' and ((s.ru_id = \'' .$adminru['ru_id'] . '\' and s.proxy_status <> 1) or  (s.ru_id is null and s.proxy_status is null))'; 
+		}		
+	}
+	$is_delete = 0;
+	$real_goods = 1;
+	$param_str = '-' . $is_delete . '-' . $real_goods;
+	$result = get_filter($param_str);
+
+
+	if ($result === false) {
+		$day = getdate();
+		$today = local_mktime(23, 59, 59, $day['mon'], $day['mday'], $day['year']);
+		$filter['cat_id'] = empty($_REQUEST['cat_id']) ? 0 : intval($_REQUEST['cat_id']);
+
+
+		$filter['cat_type'] = !isset($_REQUEST['cat_type']) ? '' : addslashes($_REQUEST['cat_type']);
+		
+
+		$filter['keyword'] = empty($_REQUEST['keyword']) ? '' : trim($_REQUEST['keyword']);
+
+		$filter['is_on_sale'] = isset($_REQUEST['is_on_sale']) ? (empty($_REQUEST['is_on_sale']) && $_REQUEST['is_on_sale'] === 0 ? '' : trim($_REQUEST['is_on_sale'])) : '';
+		if (isset($_REQUEST['is_ajax']) && $_REQUEST['is_ajax'] == 1) {
+			$filter['keyword'] = json_str_iconv($filter['keyword']);
+		}
+
+		$filter['review_status'] = 3;	//无需审核的商品		
+		$filter['sort_by'] = empty($_REQUEST['sort_by']) ? 'g.goods_id' : trim($_REQUEST['sort_by']);
+		$filter['sort_order'] = empty($_REQUEST['sort_order']) ? 'DESC' : trim($_REQUEST['sort_order']);
+		
+		if($manage){
+			$filter['sort_by'] = empty($_REQUEST['sort_by']) ? 's.last_change_time' : trim($_REQUEST['sort_by']);
+		}
+
+		$filter['is_delete'] = $is_delete;
+		$filter['real_goods'] = $real_goods;
+		$where = 1;
+		
+		
+		/*
+		if ($filter['cat_type'] == 'seller') {
+			$where .= 0 < $filter['cat_id'] ? ' AND (' . get_children($filter['cat_id'], 0, 0, 'merchants_category', 'g.user_cat') . ')' : '';
+		}
+		else {
+			$where .= 0 < $filter['cat_id'] ? ' AND (' . get_children($filter['cat_id']) . ' OR ' . get_children($filter['cat_id'], 1) . ')' : '';
+		}
+		*/
+
+
+		if (!empty($filter['keyword'])) {
+			$where .= ' AND (g.goods_sn LIKE \'%' . mysql_like_quote($filter['keyword']) . '%\' OR g.goods_name LIKE \'%' . mysql_like_quote($filter['keyword']) . '%\'' . ')';
+		}
+
+		if (-1 < $real_goods) {
+			$where .= ' AND g.is_real=\'' . $real_goods . '\'';
+		}
+
+		if ($filter['is_on_sale'] !== '') {
+			$where .= ' AND (g.is_on_sale = \'' . $filter['is_on_sale'] . '\')';
+		}
+
+
+		if (0 < $filter['review_status']) {
+			if ($filter['review_status'] == 3) {
+				$where .= ' AND (g.review_status >= \'' . $filter['review_status'] . '\')';
+			}
+			else {
+				$where .= ' AND (g.review_status = \'' . $filter['review_status'] . '\')';
+			}
+		}
+		else {
+			$where .= ' AND (g.review_status > 0)';
+		}
+
+		$where .= $ruCat;
+		$where .= $conditions;
+		$where .= ' AND g.is_delete = \'' . $is_delete . '\'';
+		$sql = 'SELECT g.goods_id, g.goods_name, g.model_price, g.model_inventory, g.user_id, g.goods_type, g.goods_sn, g.shop_price, g.is_on_sale, g.is_best, g.is_new, g.is_hot, g.sort_order, g.goods_number, g.integral, ' . ' g.is_promote ' . ' FROM ' . $GLOBALS['ecs']->table('goods') . ' AS g ' . ' LEFT JOIN ' . $GLOBALS['ecs']->table('goods_cat') . ' as gc on g.goods_id = gc.goods_id LEFT JOIN ' .$GLOBALS['ecs']->table('seller_proxy_goods') . ' as s on g.goods_id = s.goods_id ' . (' WHERE ' . $where . ' GROUP BY g.goods_id');
+		$filter['record_count'] = count($GLOBALS['db']->getAll($sql));
+		$select = '';
+
+		if (file_exists(MOBILE_DRP)) {
+			$select .= ', g.is_distribution';
+		}
+		
+		if($manage){			
+			$select .= ', s.proxy_time, s.last_change_time';
+		}
+
+		$filter = page_and_size($filter);
+
+		$sql = 'SELECT g.goods_id, g.goods_name,g.cat_id, g.user_id, g.brand_id, g.goods_type, g.goods_sn, g.shop_price, g.is_on_sale, ' . 'g.is_best, g.is_new, g.is_hot, g.sort_order, g.goods_number, g.integral, g.commission_rate, g.sales_volume_base, ' . 'g.is_promote, g.model_price, g.model_inventory, g.model_attr, g.review_status, g.review_content, g.store_best, ' . 'g.store_new , g.store_hot , g.is_real, g.is_shipping, g.stages,g.goods_thumb, add_time, freight, tid, ' . 'g.is_alone_sale, g.is_xiangou, g.promote_end_date, g.xiangou_end_date, g.bar_code,s.proxy_status ' . $select . ' FROM ' . $GLOBALS['ecs']->table('goods') . ' AS g ' . ' LEFT JOIN ' . $GLOBALS['ecs']->table('goods_cat') . ' as gc on g.goods_id = gc.goods_id LEFT JOIN ' .$GLOBALS['ecs']->table('seller_proxy_goods') . ' as s on g.goods_id = s.goods_id ' . (' WHERE ' . $where) . (' GROUP BY g.goods_id ORDER BY ' . $filter['sort_by'] . ' ' . $filter['sort_order'] . ' ') . ' LIMIT ' . $filter['start'] . (',' . $filter['page_size']);
+		$filter['keyword'] = stripslashes($filter['keyword']);
+		set_filter($filter, $sql, $param_str);
+	}
+	else {
+		$sql = $result['sql'];
+		$filter = $result['filter'];
+	}
+
+	$row = $GLOBALS['db']->getAll($sql);
+	
+	$count = count($row);
+
+	for ($i = 0; $i < $count; $i++) {
+		$row[$i]['user_name'] = get_shop_name($row[$i]['user_id'], 1);
+		$brand = get_goods_brand_info($row[$i]['brand_id']);
+		$row[$i]['brand_name'] = $brand['brand_name'];
+
+		if ($row[$i]['goods_type'] == 0) {
+			$sql = 'DELETE FROM ' . $GLOBALS['ecs']->table('products') . ' WHERE goods_id = \'' . $row[$i]['goods_id'] . '\'';
+			$GLOBALS['db']->query($sql);
+			$sql = 'DELETE FROM ' . $GLOBALS['ecs']->table('products_area') . ' WHERE goods_id = \'' . $row[$i]['goods_id'] . '\'';
+			$GLOBALS['db']->query($sql);
+			$sql = 'DELETE FROM ' . $GLOBALS['ecs']->table('products_warehouse') . ' WHERE goods_id = \'' . $row[$i]['goods_id'] . '\'';
+			$GLOBALS['db']->query($sql);
+			$sql = 'DELETE FROM ' . $GLOBALS['ecs']->table('goods_attr') . ' WHERE goods_id = \'' . $row[$i]['goods_id'] . '\'';
+			$GLOBALS['db']->query($sql);
+		}
+
+		$row[$i]['goods_extend'] = get_goods_extend($row[$i]['goods_id']);
+		$row[$i]['url'] = build_uri('goods', array('gid' => $row[$i]['goods_id']), $row[$i]['goods_name']);
+		$row[$i]['formated_shop_price'] = price_format($row[$i]['shop_price']);
+		$row[$i]['formated_add_tim'] = local_date($GLOBALS['_CFG']['time_format'], $row[$i]['add_time']);
+
+		if ($row[$i]['freight'] == 2) {
+			$row[$i]['transport'] = get_goods_transport_info($row[$i]['tid']);
+		}
+
+		$row[$i]['goods_thumb'] = get_image_path($row[$i]['goods_id'], $row[$i]['goods_thumb'], true);
+		$row[$i]['sales_volume_base'] = $row[$i]['sales_volume_base'];
+		
+		if($manage){
+			$row[$i]['join_time'] = local_date($GLOBALS['_CFG']['time_format'], $row[$i]['last_change_time']);
+		}
+		
+	}
+	return array('goods' => $row, 'filter' => $filter, 'page_count' => $filter['page_count'], 'record_count' => $filter['record_count']);
+}
+function change_proxy($ru_id,$goods_id,$proxy_status){
+	$sql = 'SELECT * FROM ' . $GLOBALS['ecs']->table('seller_proxy_goods') . ' WHERE ru_id = \'' . $ru_id .'\' AND goods_id = \'' . $goods_id .'\'';
+	$res = $GLOBALS['db']->getRow($sql);
+	if($res){
+		if($res['proxy_status'] != $proxy_status){			
+			$sql = 'UPDATE ' . $GLOBALS['ecs']->table('seller_proxy_goods') . ' SET `proxy_status` = \'' . $proxy_status . '\', `last_change_time` = \'' . gmtime() . '\' ' . (' WHERE goods_id = \''. $goods_id .'\' AND ru_id = \'' . $ru_id . '\'');
+			$rs = $GLOBALS['db']->query($sql);
+			if($rs){
+				return 1;
+			}else{
+				return 2;
+			}
+		}else{
+			return 3;
+		}
+	}else{
+		$sql = 'INSERT INTO ' . $GLOBALS['ecs']->table('seller_proxy_goods') . ' (ru_id,goods_id, proxy_status,proxy_time,last_change_time) ' . ('VALUES (\'' . $ru_id . '\', \'' . $goods_id . '\', \'' . $proxy_status . '\', \'' . gmtime() . '\', \'' . gmtime() . '\')');
+		$rs = $GLOBALS['db']->query($sql);
+		if($rs){
+			return 1;
+		}else{
+			return 2;
+		}
+	}
+}
+
 if (!defined('IN_ECS')) {
 	exit('Hacking attempt');
 }
